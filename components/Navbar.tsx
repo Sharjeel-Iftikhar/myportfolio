@@ -4,6 +4,7 @@ import React from 'react'
 import { styles } from '../utils/styles'
 import { useState } from 'react'
 import { navLinks } from "../constants";
+import { useEffect } from 'react';
 
 
 import Link from 'next/link'
@@ -13,6 +14,23 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <nav
     className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 ${
@@ -44,7 +62,7 @@ const Navbar = () => {
               `
               }onClick={()=> setActive(links.title)}
               >
-                <Link href={`#${links.id}`}>
+                <Link href={`/${links.id}`}>
                   {links.title}
                 </Link>
               </li>

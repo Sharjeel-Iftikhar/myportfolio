@@ -1,11 +1,16 @@
+import About from '@/components/About';
 import React from 'react'
-import {motion} from 'framer-motion'
-import RobotCanvas  from './canvas/Robot'
+import Hero from '@/components/Hero';
+import RobotCanvas from '@/components/canvas/Robot';
+import StarsCanvas from '@/components/canvas/Stars'
 
-
-const Hero = () => {
-  return (
-    <section className='relative w-full h-screen mx-auto'>
+export default function page() {
+    return (
+        <>
+        <div className="relative z-0 bg-primary">
+        <StarsCanvas/>
+      <div className=" bg-cover bg-no-repeat bg-center">
+      <section className='relative w-full h-screen mx-auto'>
       <div className={`sm:px-16 px-12 absolute inset-0 top-[120px]
       max-w-[88rem] mx-auto flex md:flex-row flex-col items-start gap-10 md:gap-5`}>
 
@@ -40,23 +45,15 @@ const Hero = () => {
         </p>
       </div>
 
-      <RobotCanvas modelPath={'/robot_playground/scene.gltf'}/>
+      {/* <RobotCanvas modelPath={'/about-me/scene.gltf'}/> */}
+      
        
      
-      </div>  
-      {/* <div className='absolute xs:bottom-3 bottom-60
-      w-full flex justify-center items-center'>
-        <a href='#about'>
-          <div className='w-[35px] h-[63px] rounded-3xl border-4
-          border-secondary flex justify-center items-start p-2'>
-
-          </div>
-        </a>
-      </div> */}
-      
+      </div>    
     </section>
-  )
+      </div>
+      </div>
+    
+    </>
+    )
 }
-
-
-export default Hero
