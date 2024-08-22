@@ -40,7 +40,7 @@ const Hero = () => {
         </p>
       </div>
 
-      <RobotCanvas modelPath={'/robot_playground/scene.gltf'}/>
+      <RobotCanvas />
        
      
       </div>  

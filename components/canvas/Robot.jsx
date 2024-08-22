@@ -7,8 +7,8 @@ import * as THREE from 'three';
 import Loader from '../Loader';
 
 // Robot component that accepts a modelPath prop
-const Robot = ({ modelPath }) => {
-  const { animations, scene } = useGLTF(modelPath);
+const Robot = () => {
+  const { animations, scene } = useGLTF('/robot_playground/scene.gltf');
   const { actions } = useAnimations(animations, scene);
 
   // State for responsive scale and position
@@ -21,39 +21,22 @@ const Robot = ({ modelPath }) => {
     const tabletQuery = window.matchMedia('(max-width: 768px)');
     const laptopQuery = window.matchMedia('(max-width: 1024px)');
 
-    // Default scale and position based on modelPath
-    if (modelPath === '/desktop_pc/scene.gltf') {
-      setScale(0.7);
-      setPosition([0, -1, -2]);
-    } else if (modelPath === '/robot_playground/scene.gltf') {
-      setScale(2.5);
-      setPosition([0, -2.5, 0]);
-    }
+  
 
     if (mobileQuery.matches) {
-      if (modelPath === '/desktop_pc/scene.gltf') {
-        setScale(3.5);
-        setPosition([0, -5, 0]);
-      } else {
+      
         setScale(4.5);
         setPosition([0, -4.5, 0]);
-      }
     } else if (tabletQuery.matches) {
-      if (modelPath === '/desktop_pc/scene.gltf') {
-        setScale(2.8);
-        setPosition([0, -4, 0]);
-      } else {
+      
         setScale(3.5);
         setPosition([0, -5.5, 0]);
-      }
+
     } else if (laptopQuery.matches) {
-      if (modelPath === '/desktop_pc/scene.gltf') {
+      
         setScale(2);
         setPosition([0, -3.5, 0]);
-      } else {
-        setScale(2);
-        setPosition([0, -3.5, 0]);
-      }
+
     }
   };
 
@@ -76,7 +59,7 @@ const Robot = ({ modelPath }) => {
       tabletQuery.removeEventListener('change', updateScaleAndPosition);
       laptopQuery.removeEventListener('change', updateScaleAndPosition);
     };
-  }, [modelPath]);
+  }, []);
 
   useEffect(() => {
     if (actions) {
@@ -119,7 +102,7 @@ const Robot = ({ modelPath }) => {
 };
 
 // RobotCanvas component that accepts a modelPath prop and passes it to the Robot component
-const RobotCanvas = ({ modelPath }) => {
+const RobotCanvas = () => {
   return (
     <Canvas
       frameloop="always" // Ensure continuous updates for smooth animation
@@ -132,7 +115,7 @@ const RobotCanvas = ({ modelPath }) => {
           maxPolarAngle={Math.PI / 2} 
           minPolarAngle={Math.PI / 2}
         />
-        <Robot modelPath={modelPath} />
+        <Robot />
       </Suspense>
       <Preload all />
     </Canvas>

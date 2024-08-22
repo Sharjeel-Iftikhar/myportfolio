@@ -76,6 +76,56 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+
+
+/* Container for tech stack icons */
+
+
+/* Individual tech icons */
+.tech-icon {
+  font-size: 4.5rem; /* Equivalent to text-4xl */
+  margin: 0;
+  padding: 0.5rem; /* Equivalent to p-2 */
+  opacity: 0.9;
+  border: 2px solid #000000; /* Equivalent to border-purple-500 */
+  border-radius: 0.2rem; /* Equivalent to rounded-lg */
+  box-shadow: 4px 5px 4px 3px rgba(161, 94, 227, 0.137); /* Equivalent to shadow-lg */
+  transition: all 0.4s ease 0s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16%; /* Adjust as needed */
+  height: 140px; /* Adjust as needed */
+}
+
+/* Hover effect */
+.tech-icon:hover {
+  transform: scale(1.05);
+  border: 2.2px solid rgba(197, 115, 230, 0.883);
+  overflow: hidden;
+  
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .tech-icon {
+    margin: 0.25rem; /* Equivalent to m-1 */
+    width: 60px; /* Smaller size on mobile */
+    height: 60px; /* Smaller size on mobile */
+  }
+}
+
+/* Ensures no more than 5 items per row */
+.techstack-container > .tech-icon:nth-child(5n+1) {
+  margin-left: 0;
+}
+
+.techstack-container > .tech-icon:nth-child(5n) {
+  margin-right: 0;
+}
+
+
+
 .violet-gradient {
   background: #804dee;
   background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);

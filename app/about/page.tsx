@@ -1,59 +1,65 @@
-import About from '@/components/About';
 import React from 'react'
-import Hero from '@/components/Hero';
-import RobotCanvas from '@/components/canvas/Robot';
-import StarsCanvas from '@/components/canvas/Stars'
+import StarsCanvas from '@/components/canvas/Stars';
+import Tech from '@/components/Tech';
 
 export default function page() {
-    return (
-        <>
-        <div className="relative z-0 bg-primary">
-        <StarsCanvas/>
-      <div className=" bg-cover bg-no-repeat bg-center">
-      <section className='relative w-full h-screen mx-auto'>
-      <div className={`sm:px-16 px-12 absolute inset-0 top-[120px]
-      max-w-[88rem] mx-auto flex md:flex-row flex-col items-start gap-10 md:gap-5`}>
-
-        <div className='hidden md:flex flex-col justify-center items-center mt-5'> 
-          <div className='w-5 h-5 rounded-full bg-[#915eff]'/>
-          <div className='w-1 sm:h-[28rem] h-60 violet-gradient' />
-        </div>
-
-        <div>
-        <h1 className={`font-black text-white lg:text-[46px] sm:text-[36px] xs:text-[30px] text-[36px] lg:leading-[72px] mt-2}
-        `}>Hi, I'm Sharjeel 
-        <span className=
-        'text-[#915eff]'> Iftikhar</span>
-        </h1>
-        <p className={` mt-2 text-secondary leading-10` }>
-        I fell in love with programming and I have at least learnt
-        something, I think… 🤷‍♂️ <br className='sm:block hidden' />
-        I am fluent in classics like &nbsp;
-        <span className='text-[#915eff]'>
-          JavaScript, C++ and Python.
-        </span>
-        <br className='sm:block hidden' />
-        My field of Interest's are building new &nbsp;
-        <span className='text-[#915eff]'>
-          Web Technologies and Products &nbsp;
-        </span>
-        and also in areas related to &nbsp;
-        <br className='sm:block hidden' />
-        <span className='text-[#915eff]'>
-          integration with cloud services.
-        </span>
-        </p>
-      </div>
-
-      {/* <RobotCanvas modelPath={'/about-me/scene.gltf'}/> */}
-      
-       
-     
-      </div>    
-    </section>
-      </div>
-      </div>
+  return (
+    <>
     
+      <div className="relative z-0 bg-primary">
+        <StarsCanvas />
+        
+          <section className=" w-full mx-auto">
+            <div
+              className={`sm:px-16 px-12 pt-[92px] pb-10
+                max-w-[88rem] mx-auto flex md:flex-row flex-col items-start gap-10 md:gap-5 mt-0 md:mt-16`}
+            >
+              <div className='w-[70%]'>
+                <h1
+                  className={`font-black text-white lg:text-[46px] sm:text-[36px] xs:text-[30px] text-[36px] lg:leading-[72px] mt-2`}
+                >
+                  Know who
+                  <span className="text-[#915eff]"> I'm</span>
+                </h1>
+                <p className="mt-2 text-secondary leading-10">
+                  👋 Hi! I'm Sharjeel Iftikhar, straight outta{' '}
+                  <span className="text-[#915eff]">Gujranwala</span>, Pakistan.
+                  The land of epic BBQ,  <br className='sm:block hidden' />
+                  strong chai, and legendary wrestlers (no, I don't wrestle...yet).
+                  <br className='sm:block hidden' />
+                  I’m a <span className="text-[#915eff]">software developer</span> by profession, transforming caffeine
+                  into code.
+                  <br className="sm:block hidden" />
+                  I have completed BS-CS from <span className="text-[#915eff]">UET</span>, Lahore.
+                  <br />
+                  <span className='mt-16'>When I'm not typing away at my keyboard, you can catch me:</span>
+
+
+                  <br />
+                  🏏 Playing cricket
+                  <br />
+                  🕹️ Gaming
+                  <br />
+                  🌍 Traveling
+                  <br />
+                  <span className='italic'> ~ Stay awesome, and if you're ever in Gujranwala, let’s grab some BBQ! 🔥</span>
+                </p>
+              </div>
+
+              <div className="w-[300px] mt-8">
+                <img src="/assets/about.gif" className="w-full h-auto" alt="About GIF" />
+              </div>
+            </div>
+          </section>
+         
+
+        
+
+      </div>
+      <div className="bg-primary">
+        <Tech />
+      </div>
+      
     </>
-    )
+  )
 }
