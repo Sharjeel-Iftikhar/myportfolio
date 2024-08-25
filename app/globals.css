@@ -34,6 +34,44 @@
   margin-top: 0.5rem; /* mt-2 */
 }
 
+rect[data-level="1"] {
+  fill: #e0bbff; /* Light purple */
+}
+
+rect[data-level="2"] {
+  fill: #d29bff; /* Medium-light purple */
+}
+
+rect[data-level="3"] {
+  fill: #b874ff; /* Medium purple */
+}
+
+rect[data-level="4"] {
+  fill: #9b44ff; /* Dark purple */
+}
+
+.react-activity-calendar__footer .react-activity-calendar__legend-colors svg:nth-child(2) rect {
+  fill: #e0bbff; /* Light purple */
+}
+
+.react-activity-calendar__footer .react-activity-calendar__legend-colors svg:nth-child(3) rect {
+  fill: #d29bff; /* Medium-light purple */
+}
+
+.react-activity-calendar__footer .react-activity-calendar__legend-colors svg:nth-child(4) rect {
+  fill: #b874ff; /* Medium purple */
+}
+
+.react-activity-calendar__footer .react-activity-calendar__legend-colors svg:nth-child(5) rect {
+  fill: #9b44ff; /* Dark purple */
+}
+
+.react-activity-calendar__footer .react-activity-calendar__legend-colors svg:nth-child(6) rect {
+  fill: #8000ff; /* Darker purple */
+}
+
+
+
 
 .sectionHeadText {
   font-weight: 900; /* font-black */
