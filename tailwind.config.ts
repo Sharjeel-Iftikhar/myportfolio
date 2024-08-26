@@ -20,7 +20,8 @@ const config: Config = {
         card: "0px 35px 120px -15px #211e35",
       },
       screens: {
-        xs: "450px",
+        'xs' : "450px",
+        '2xl': "1736px"
       },
       backgroundImage: {
         "hero-pattern": "url('/assets/herobg.png')",

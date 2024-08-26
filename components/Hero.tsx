@@ -2,12 +2,12 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import RobotCanvas  from './canvas/Robot'
 
-
 const Hero = () => {
   return (
+    <>
     <section className='relative w-full h-screen mx-auto'>
-      <div className={`sm:px-16 px-12 absolute inset-0 top-[120px]
-      max-w-[88rem] mx-auto flex md:flex-row flex-col items-start gap-10 md:gap-5`}>
+      <div className={`sm:px-16 px-12 sm:absolute inset-0 top-[120px] xs:pt-0 pt-[100px]
+      sm:max-w-[88rem] 2xl:max-w-[107rem] mx-auto flex md:flex-row flex-col items-start gap-10 md:gap-5`}>
 
         <div className='hidden md:flex flex-col justify-center items-center mt-5'> 
           <div className='w-5 h-5 rounded-full bg-[#915eff]'/>
@@ -20,7 +20,7 @@ const Hero = () => {
         <span className=
         'text-[#915eff]'> Iftikhar</span>
         </h1>
-        <p className={` mt-2 text-secondary leading-10` }>
+        <p className={` mt-2 text-secondary leading-10  xs:text-left text-justify`  }>
         I fell in love with programming and I have at least learnt
         something, I think… 🤷‍♂️ <br className='sm:block hidden' />
         I am fluent in classics like &nbsp;
@@ -39,22 +39,20 @@ const Hero = () => {
         </span>
         </p>
       </div>
+      <div className='xs:h-screen sm:h-full w-full '>
 
       <RobotCanvas />
+      </div>
        
      
       </div>  
-      {/* <div className='absolute xs:bottom-3 bottom-60
-      w-full flex justify-center items-center'>
-        <a href='#about'>
-          <div className='w-[35px] h-[63px] rounded-3xl border-4
-          border-secondary flex justify-center items-start p-2'>
-
-          </div>
-        </a>
-      </div> */}
+     
+      
       
     </section>
+    
+    
+    </>
   )
 }
 

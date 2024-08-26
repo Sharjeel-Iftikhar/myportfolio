@@ -70,6 +70,49 @@ rect[data-level="4"] {
   fill: #8000ff; /* Darker purple */
 }
 
+.react-calendar {
+  font-size: var(--calendar-font-size, 16px); /* Default font size */
+}
+
+.react-calendar__tile {
+  width: var(--calendar-block-size, 14px); /* Default block size */
+  height: var(--calendar-block-size, 14px); /* Default block size */
+  margin: var(--calendar-block-margin, 5px); /* Default block margin */
+}
+
+/* Responsive adjustments */
+@media (min-width: 1024px) {
+  .react-calendar {
+    --calendar-font-size: 16px;
+  }
+  .react-calendar__tile {
+    --calendar-block-size: 14px;
+    --calendar-block-margin: 5px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .react-calendar {
+    --calendar-font-size: 14px;
+  }
+  .react-calendar__tile {
+    --calendar-block-size: 10px;
+    --calendar-block-margin: 4px;
+  }
+}
+
+@media (max-width: 767px) {
+  .react-calendar {
+    --calendar-font-size: 12px;
+  }
+  .react-calendar__tile {
+    --calendar-block-size: 6px;
+    --calendar-block-margin: 2px;
+  }
+}
+
+
+
 
 
 
@@ -147,20 +190,12 @@ rect[data-level="4"] {
 /* Responsive adjustments */
 @media (max-width: 767px) {
   .tech-icon {
-    margin: 0.25rem; /* Equivalent to m-1 */
-    width: 60px; /* Smaller size on mobile */
-    height: 60px; /* Smaller size on mobile */
+    margin: 0.5rem; /* Equivalent to m-1 */
+    width: 37%; /* Smaller size on mobile */
+    height: 100px; /* Smaller size on mobile */
   }
 }
 
-/* Ensures no more than 5 items per row */
-.techstack-container > .tech-icon:nth-child(5n+1) {
-  margin-left: 0;
-}
-
-.techstack-container > .tech-icon:nth-child(5n) {
-  margin-right: 0;
-}
 
 
 

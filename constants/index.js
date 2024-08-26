@@ -1,7 +1,11 @@
 import {
-    carrent,
-    jobit,
-    tripguide,
+    connectify,
+    dall_e,
+    aisol,
+    testportal,
+    metaExpo,
+    tenzies,
+    meme,
    
   } from "../public/assets";
   
@@ -20,16 +24,16 @@ import {
       title: "Projects",
     },
     {
-      id: "resume",
-      title: "Resume",
+      id: "contact",
+      title: "Contact",
     },
   ];
    
   const projects = [
     {
-      name: "Car Rent",
+      name: "Dall-e Clone",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "DALL-E-AI Clone powered by MERN Stack. Unleash your imagination as this cutting-edge technology combines the creativity of DALL-E with the versatility of MERN, empowering you to generate stunning images and artworks with just a few clicks. Get ready to redefine the limits of visual exploration and bring your ideas",
       tags: [
         {
           name: "react",
@@ -44,93 +48,147 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: dall_e,
+      source_code_link: "https://github.com/Sharjeel-Iftikhar/DALL-E_AI_CLONE",
     },
     {
-      name: "Job IT",
+      name: "Meta Expo",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "Developed Metaverse ExpoCenter, a virtual platform for attending events and conferences, using Unity and VR technologies. The platform includes customizable avatars, an exhibition area, a seminar hall, and an NFT gallery for real-time interaction and collaboration. It aims to provide a user-friendly experience for global users.",
+      tags: [
+        {
+          name: "nextjs",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "supabase",
+          color: "green-text-gradient",
+        },
+        {
+          name: "typescript",
+          color: "green-text-gradient",
+        },
+        {
+          name: "tailwind",
+          color: "pink-text-gradient",
+        },
+        {
+          name: "trpc",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: metaExpo,
+      source_code_link: "https://github.com/Sharjeel-Iftikhar/MetaExpo-t3",
+    },
+    {
+      name: "Connectify",
+      description:
+        "Web application full Stack social media application using MERN technologies. Fully user friendly design to connect and share your thoughts and moments with your beloved ones",
       tags: [
         {
           name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "restapi",
+          name: "mongodb",
           color: "green-text-gradient",
         },
         {
-          name: "scss",
+          name: "node",
           color: "pink-text-gradient",
         },
       ],
-      image: jobit,
-      source_code_link: "https://github.com/",
+      image: connectify,
+      source_code_link: "https://github.com/Sharjeel-Iftikhar/Connectify-Socail-app",
     },
     {
-      name: "Trip Guide",
+      name: "Test Portal",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "A comprehensive test portal that allows users to take tests, view results, and offers curated recommendations for popular tests.",
       tags: [
         {
           name: "nextjs",
           color: "blue-text-gradient",
         },
         {
-          name: "supabase",
+          name: "moongodb",
           color: "green-text-gradient",
         },
         {
-          name: "css",
+          name: "tailwind",
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
+      image: testportal,
+      source_code_link: "https://github.com/Sharjeel-Iftikhar/TestPortal",
     },
+    
     {
-      name: "Trip Guide",
+      name: "Aisol.uk",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "From Code to Couture : Marketing Refined. Aisol Ltd, based in Edinburgh, seamlessly blends AI innovation with marketing acumen to deliver exceptional business solutions.",
       tags: [
         {
           name: "nextjs",
           color: "blue-text-gradient",
         },
         {
-          name: "supabase",
+          name: "TypeScript",
           color: "green-text-gradient",
         },
         {
-          name: "css",
+          name: "taiwind",
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
+      image: aisol,
+      source_code_link: "https://github.com/Sharjeel-Iftikhar/AISOLLTD",
     },
     {
-      name: "Trip Guide",
+      name: "Tenzies",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "Tenzies Game involves selecting a set of dice and then rolling them repeatedly until all dice show the same value. The game is played as a single player and the objective is to achieve the goal of matching all the dice in as few rolls as possible.",
       tags: [
         {
-          name: "nextjs",
+          name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "supabase",
+          name: "javascrippt",
           color: "green-text-gradient",
         },
         {
-          name: "css",
+          name: "HTML & CSS",
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
+      image: tenzies,
+      source_code_link: "https://github.com/Sharjeel-Iftikhar/Mern-Practices/tree/main/Tenzies",
     },
+
+    {
+      name: "Meme Gemerator",
+      description:
+        "The Meme Generator App is a fun and creative web application built with React. Unleash your inner humorist and create hilarious memes in seconds. Whether you're looking to brighten your day or share a laugh with friends, this app has you covered! Images are coming from jokes api so user can easily generate memes by writing text on it.",
+      tags: [
+        {
+          name: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "javascrippt",
+          color: "green-text-gradient",
+        },
+        {
+          name: "HTML & CSS",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: meme,
+      source_code_link: "https://github.com/Sharjeel-Iftikhar/Mern-Practices/tree/main/Meme-generator",
+    },
+    
+ 
   ];
   
   export { projects };

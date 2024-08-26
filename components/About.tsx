@@ -1,13 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { fadeIn, textVariant } from '../utils/motion'
-import { SectionWrapper } from '@/hoc'
+
 
 
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariant()}
+      className='xs:px-16 px-12 pt-10 sm:max-w-[88rem] 2xl:max-w-[107rem] mx-auto sm:mt-[2rem] mt-[30rem] 2xl:mt-32'>
         <p className='sm:text-[18px] text-[14px]
          text-secondary uppercase tracking-wider '>let me introduce myself</p>
         <h2 className='sectionHeadText'>Overview.</h2>
@@ -15,10 +16,11 @@ const About = () => {
 
       <motion.div variants={fadeIn("", "", 0.1, 1)}
       >
-        <div className='flex flex-col-reverse lg:flex-row items-center gap-40 justify-between '>
-          <div className="relative mt-20 min-w-[20rem]">
+        <div className='flex flex-col-reverse lg:flex-row items-center xs:gap-4 lg:gap-40 justify-between xm:px-16 px-12
+         sm:max-w-[88rem] 2xl:max-w-[107rem] mx-auto xs:text-left text-justify'>
+          <div className="relative mt-20 2xl:min-w-[20rem] min-w-[17rem]">
             <img className="h-[50%] absolute top-0 left-40 lg:left-3 -z-10" src="/dots.png" />
-            <div className="h-full w-1/2 ml-40 lg:w-full lg:ml-0 rounded-full overflow-hidden ">
+            <div className="h-full w-[70%] xs:w-1/2  ml-[3rem] lg:w-full lg:ml-0 rounded-full overflow-hidden ">
               <img src="/mePortrait.jpeg" />
             </div>
           </div>
@@ -26,7 +28,7 @@ const About = () => {
           <div>
             <p
 
-              className='mt-4 text-secondary text-[17px] leading-[30px]'
+              className='mt-4 text-secondary text-[17px] leading-[30px] sm:px-4' 
             >
               I'm a skilled software developer with experience in <span className='text-[#915eef]'>
                 TypeScript and
@@ -45,12 +47,12 @@ const About = () => {
       </motion.div>
 
       
-        <div className="container mx-auto">
+        <div className="container mx-auto xs:mt-0 mt-7"  id='contact' >
             {/* <!-- top --> */}
             <div className="flex flex-col gap-6 items-center">
                 <h1 className="sm:text-[18px] text-3xl
          text-secondary uppercase tracking-wider  mt-16">FIND ME ON</h1>
-                <h1 className="text-3xl text-secondary">Feel free to <span className="text-[#915eef]">connect</span> with
+                <h1 className="text-lg xs:text-3xl text-secondary">Feel free to <span className="text-[#915eef]">connect</span> with
                     me</h1>
                 <p className="w-1/2 text-center text-secondary">
                     Do you have an idea? Let's discuss it and see what we can do
@@ -97,4 +99,4 @@ const About = () => {
   )
 }
 
-export default SectionWrapper(About, "about");
+export default About;

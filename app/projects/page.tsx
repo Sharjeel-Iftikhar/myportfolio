@@ -13,9 +13,9 @@ export default function page() {
     <div className="relative z-0 bg-primary">
     <StarsCanvas />
     <motion.div variants={textVariant()}
-      className="flex items-center justify-center flex-col mt-6 pt-[6%] pb-[10%]">
+      className="flex items-center justify-center flex-col mt-6 sm:pt-[12%] sm:pb-[12%] pt-[30%] pb-[21%]">
       <h1
-          className={`font-black text-white lg:text-[46px] sm:text-[36px] xs:text-[30px] text-[36px] lg:leading-[72px]`}
+          className={`font-black text-white lg:text-[46px] sm:text-[36px] xs:text-[30px] text-[29px] lg:leading-[72px]`}
         >
           My Recent
           <span className="text-[#915eff]"> Projects</span>
@@ -24,7 +24,7 @@ export default function page() {
         <div className='w-full flex justify-center items-center text-center mt-8'>
           <motion.p
           variants={fadeIn("","", 0.1,1)}
-          className='text-secondary mt-3  max-w-3xl leading-[30px]'>
+          className='text-secondary mt-3  sm:max-w-3xl xs:max-w-[32rem] max-w-[17rem] leading-[30px]'>
              Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
           links to code repositories and live demos in it. It reflects my

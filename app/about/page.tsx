@@ -12,9 +12,9 @@ export default function page() {
           <section className=" w-full mx-auto">
             <div
               className={`sm:px-16 px-12 pt-[92px] pb-10
-                max-w-[88rem] mx-auto flex md:flex-row flex-col items-start gap-10 md:gap-5 mt-0 md:mt-16`}
+                sm:max-w-[88rem] 2xl:max-w-[107rem] mx-auto flex md:flex-row flex-col items-start gap-10 md:gap-5 mt-0 md:mt-16`}
             >
-              <div className='w-[70%]'>
+              <div className='sm:w-[70%] w-full sm:text-left text-justify'>
                 <h1
                   className={`font-black text-white lg:text-[46px] sm:text-[36px] xs:text-[30px] text-[36px] lg:leading-[72px] mt-2`}
                 >

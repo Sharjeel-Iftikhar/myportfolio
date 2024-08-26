@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Particles.js", "components/Particles.js", "components/StarParticles/Particles.ts", "app/layout.tsx", "app/page.tsx", "components/canvas/Robot.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Particles.js", "components/Particles.js", "components/StarParticles/Particles.ts", "app/layout.tsx", "app/page.tsx", "components/canvas/Robot.jsx", "app/resume/page.js"],
   "exclude": ["node_modules"]
 }

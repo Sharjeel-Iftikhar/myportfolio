@@ -7,59 +7,18 @@ import * as THREE from 'three';
 import Loader from '../Loader';
 
 // Robot component that accepts a modelPath prop
-const Robot = () => {
+const Robot = ({ isMobile }) => {
   const { animations, scene } = useGLTF('/robot_playground/scene.gltf');
   const { actions } = useAnimations(animations, scene);
 
   // State for responsive scale and position
-  const [scale, setScale] = useState(2.5);
-  const [position, setPosition] = useState([0, -2.5, 0]);
+  // const [scale, setScale] = useState(2.0);
+  // const [position, setPosition] = useState([0, -0.9, 0]);
 
-  // Function to update scale and position based on media queries and modelPath
-  const updateScaleAndPosition = () => {
-    const mobileQuery = window.matchMedia('(max-width: 640px)');
-    const tabletQuery = window.matchMedia('(max-width: 768px)');
-    const laptopQuery = window.matchMedia('(max-width: 1024px)');
 
-  
 
-    if (mobileQuery.matches) {
-      
-        setScale(4.5);
-        setPosition([0, -4.5, 0]);
-    } else if (tabletQuery.matches) {
-      
-        setScale(3.5);
-        setPosition([0, -5.5, 0]);
 
-    } else if (laptopQuery.matches) {
-      
-        setScale(2);
-        setPosition([0, -3.5, 0]);
 
-    }
-  };
-
-  useEffect(() => {
-    // Initial scale and position update
-    updateScaleAndPosition();
-
-    // Add listeners for media queries
-    const mobileQuery = window.matchMedia('(max-width: 640px)');
-    const tabletQuery = window.matchMedia('(max-width: 768px)');
-    const laptopQuery = window.matchMedia('(max-width: 1024px)');
-
-    mobileQuery.addEventListener('change', updateScaleAndPosition);
-    tabletQuery.addEventListener('change', updateScaleAndPosition);
-    laptopQuery.addEventListener('change', updateScaleAndPosition);
-
-    // Clean up listeners on component unmount
-    return () => {
-      mobileQuery.removeEventListener('change', updateScaleAndPosition);
-      tabletQuery.removeEventListener('change', updateScaleAndPosition);
-      laptopQuery.removeEventListener('change', updateScaleAndPosition);
-    };
-  }, []);
 
   useEffect(() => {
     if (actions) {
@@ -93,9 +52,9 @@ const Robot = () => {
       />
       <primitive
         object={scene}
-        scale={scale}
-        position={position}
-        rotation={[-0.01, -0.2, -0.1]}
+        scale={isMobile ? 2.0 : 2.3}
+        position={isMobile ? [0, -0.9, 0] : [0, -3.5, 0]}
+        rotation={[-0.01, 1.0, 0]}
       />
     </mesh>
   );
@@ -103,6 +62,30 @@ const Robot = () => {
 
 // RobotCanvas component that accepts a modelPath prop and passes it to the Robot component
 const RobotCanvas = () => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Add a listener for changes to the screen size
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
+
+    // Set the initial value of the `isMobile` state variable
+    setIsMobile(mediaQuery.matches);
+
+    // Define a callback function to handle changes to the media query
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    // Add the callback function as a listener for changes to the media query
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    // Remove the listener when the component is unmounted
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+
   return (
     <Canvas
       frameloop="always" // Ensure continuous updates for smooth animation
@@ -115,7 +98,7 @@ const RobotCanvas = () => {
           maxPolarAngle={Math.PI / 2} 
           minPolarAngle={Math.PI / 2}
         />
-        <Robot />
+        <Robot  isMobile={isMobile}/>
       </Suspense>
       <Preload all />
     </Canvas>
